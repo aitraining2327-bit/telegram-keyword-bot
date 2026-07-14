@@ -5,7 +5,6 @@ const ADMIN_ID = process.env.ADMIN_ID;
 
 const bot = new TelegramBot(TOKEN, { polling: true });
 
-
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(
     msg.chat.id,
@@ -13,19 +12,14 @@ bot.onText(/\/start/, (msg) => {
   );
 });
 
-
 bot.on("message", (msg) => {
-
   const text = msg.text;
 
   if (!text) return;
 
   if (text === "رقص") {
     bot.sendMessage(msg.chat.id, "فیلم‌های مربوط به رقص ارسال می‌شود 🎬");
-  }
-
-  else if (text === "عقل") {
+  } else if (text === "عقل") {
     bot.sendMessage(msg.chat.id, "فیلم‌های مربوط به عقل ارسال می‌شود 🎬");
   }
-
-});index.js
+}); 
